@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    {% if request.user.is_authenticated %}
+    <p>bienvenue {{ request.user }}</p>
+    <a href=" {% url 'logout' %} ">Deconnecter</a> {% else %}
+    <p>Salut Anonyme</p>
+    <a href=" {% url 'login' %} ">Connecter</a> {% endif %}
+</body>
+
+</html>
